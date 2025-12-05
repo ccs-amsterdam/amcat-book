@@ -5,6 +5,20 @@ bibliography: references.bib
 
 <!-- http://wiki.amcat.nl/3.4:Creating_search_strings -->
 
-::: {.callout-important}
-# Coming soon...
-:::
+Now that we have covered basic filtering in AmCAT, we can turn to the next task: identifying all terms that represent a broader concept. Some concepts, such as Ukraine or President Obama, are relatively easy to define using a simple keyword search. Other concepts such as emotions like fear or anger, or general sentiments like positive and negative are difficult to capture with keywords alone.
+
+Other concepts are more manageable. For example, when searching for references to terrorism, it is usually sufficient to include variations such as terror, terrorist, and terrorists. More complex concepts, such as crime, require a wider set of terms because they appear in many different forms and contexts.
+
+AmCAT provides several tools to support the construction of effective search strings. These options are summarized in the table below. Note that all search terms must be written in lowercase, while Boolean operators (AND, OR) must be written in uppercase.
+
+| Notation in query screen | Description |
+| :---- | :---- |
+| obama terrorism; obama OR terrorism | Searches articles that contain obama or terrorism. (A space automatically functions as OR.) |
+| obama AND terrorism | Articles containing obama and terrorism |
+| obama NOT terrorism | Articles containing obama, but not terrorism |
+| "obama fights terrorism" | Searches the exact phrase "obama fights terrorism" |
+| "obama israel"\~10 | Finds Obama and Israel within 10 words of each other. 10 is a random number, you can choose any other numbers which are higher than 2\. |
+| (obama OR Israel) AND (iran OR terroris\*)  | This search finds articles that contain either Obama or Israel, and at the same time either Iran or any word starting with "terroris" (e.g., terrorism, terrorist). |
+| ("obama iran"\~10 OR "obama terrorism"\~10 OR "biden iran"\~10 OR "biden terrorism"\~10) | This search looks for anything where Obama or Biden appears close to Iran or terrorism (maximum 10 words apart). |
+| \* or ? (wildcards) | A ? in a search term indicates that the place of ? can be changed in a another character. For example: terroris?, can be terrorism, or terrorist. The place of a \* can be changed in a character either in a couple of characters. For example: Economi\*, can be changed in economic, economical, economic state, but also in longer words too. Note: you can't put a wildcard at the beginning of a word. |
+
